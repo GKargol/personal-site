@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About • Grayson Kargol</title>
+  <meta name="description" content="About the photographer: background, approach, gear, and contact." />
+  <meta name="color-scheme" content="light dark" />
+  <link rel="stylesheet" href="styles.css" />
+  <script>
+    (function () {
+      const pref = localStorage.getItem('theme-pref'); // 'dark' | 'light' | null
+      if (pref === 'dark' || pref === 'light') {
+        document.documentElement.setAttribute('data-theme', pref);
+      }
+    })();
+  </script>
+</head>
+<body>
+  <!-- Header / Nav -->
+  <header class="site-header">
+    <nav class="container nav-bar">
+      <a class="logo" href="index.html">Grayson Kargol • Photography</a>
+      <ul class="nav-links">
+        <li><a href="index.html">Gallery</a></li>
+        <li><a href="about.html" aria-current="page">About</a></li>
+        <li>
+          <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Toggle color theme" title="Toggle theme">
+            🌙
+          </button>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Main -->
+  <main class="container about">
+    <h1>About</h1>
+
+    <div class="about-content">
+      <!-- Portrait -->
+      <!-- Placeholder for future photo -->
+      <figure class="card placeholder">
+        <div class="placeholder-box">
+          <p>Photo coming soon 📸</p>
+        </div>
+      </figure>
+
+      <!-- Bio + details -->
+      <div>
+        <p>
+          Hey! I’m <strong>Grayson</strong>, a hobbyist photographer who loves to experiment and try new styles. I primarily cover Sports, Events, Portraits, and Urban Architecture, 
+          with occasional work in Aerospace, Spaceflight, Automotive, Maritime, and Nature/Landscape photography.
+        </p>
+        <p>
+          This portfolio is continually evolving and updating as I experience more opportunities to capture new moments. If you have any questions related to gear or want to reach out, please check out the below sections!
+        </p>
+
+        <section aria-labelledby="gear-title" style="margin-top:1rem;">
+          <h2 id="gear-title" style="margin:0 0 .4rem; font-size:1.1rem;">Gear</h2>
+          <ul class="contact-list">
+            <li>Canon EOS Rebel T6 body </li>
+            <li>EF 75–300mm f/4–5.6 III</li>
+            <li>EF-S 18-55mm f/3.5-5.6 IS II</li>
+            <li>K&F Concept HMC Filter Set [ND4/UV/CPL]</li>
+            <li>Lightweight travel tripod</li>
+          </ul>
+        </section>
+
+        <!-- Contact -->
+        <section aria-labelledby="contact-title" style="margin-top:1rem;">
+          <h2 id="contact-title" style="margin:0 0 .4rem; font-size:1.1rem;">Contact</h2>
+          <ul class="contact-list">
+            <li>Email: <a href="mailto:contact@graysonkargol.com">contact@graysonkargol.com</a></li>
+            <li>Instagram: <a href="https://instagram.com/therealgraysonk" rel="me noopener" target="_blank">@therealgraysonk</a></li>
+            <li>Location: SC Based</li>
+          </ul>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> Grayson Kargol. All rights reserved.</p>
+      <p>
+        <a href="index.html">Gallery</a> ·
+        <a href="about.html" aria-current="page">About</a> ·
+        <a href="mailto:contact@graysonkargol.com">Email</a>
+      </p>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

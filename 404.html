@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta name="robots" content="noindex" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>404 – Page Not Found • Grayson Kargol Photography</title>
+  <meta name="color-scheme" content="light dark" />
+  <link rel="stylesheet" href="styles.css" />
+  <script>
+    (function(){
+      const pref = localStorage.getItem('theme-pref');
+      if (pref === 'dark' || pref === 'light') {
+        document.documentElement.setAttribute('data-theme', pref);
+      }
+    })();
+  </script>
+  <style>
+    main {
+      min-height: 70vh;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      padding: 2rem;
+    }
+    .error-box {
+      max-width: 600px;
+      margin-inline: auto;
+      padding: 2rem;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      box-shadow: var(--shadow);
+    }
+    .error-box h1 {
+      font-size: 2rem;
+      margin-bottom: 0.6rem;
+      color: var(--text);
+    }
+    .error-box p {
+      color: var(--muted);
+      margin-bottom: 1.2rem;
+    }
+    .error-box a {
+      display: inline-block;
+      text-decoration: none;
+      background: var(--accent);
+      color: #fff;
+      padding: 0.6rem 1.2rem;
+      border-radius: 10px;
+      font-weight: 600;
+      transition: opacity 0.2s ease;
+    }
+    .error-box a:hover {
+      opacity: 0.9;
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <nav class="container nav-bar">
+      <a class="logo" href="index.html">Grayson Kargol • Photography</a>
+      <ul class="nav-links">
+        <li><a href="index.html">Gallery</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><button id="theme-toggle" class="theme-toggle" type="button" aria-label="Toggle color theme" title="Toggle theme">🌙</button></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <div class="error-box">
+      <h1>404 – Page Not Found</h1>
+      <p>Oops! Looks like that photo wandered off. Let’s get you back to the gallery.</p>
+      <a href="index.html">Return to Gallery</a>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> Grayson Kargol. All rights reserved.</p>
+      <p>
+        <a href="index.html">Gallery</a> ·
+        <a href="about.html">About</a>
+      </p>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

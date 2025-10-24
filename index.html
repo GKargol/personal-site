@@ -1,0 +1,479 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Grayson Kargol • Photography</title>
+  <meta name="description" content="A simple, fast photography portfolio with a scrollable gallery and lightbox." />
+  <meta name="color-scheme" content="light dark" />
+<script>
+  (function () {
+    const pref = localStorage.getItem('theme-pref'); // 'dark' | 'light' | null
+    if (pref === 'dark' || pref === 'light') {
+      document.documentElement.setAttribute('data-theme', pref);
+    }
+  })();
+</script>
+  <link rel="stylesheet" href="styles.css" />
+  <script>
+    (function(){
+      const pref = localStorage.getItem('theme-pref');
+      if (pref === 'dark' || pref === 'light') {
+        document.documentElement.setAttribute('data-theme', pref);
+      }
+    })();
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <nav class="container nav-bar">
+      <a class="logo" href="index.html">Grayson Kargol • Photography</a>
+      <ul class="nav-links">
+        <li><a href="index.html" aria-current="page">Gallery</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><button id="theme-toggle" class="theme-toggle" type="button" aria-label="Toggle color theme" title="Toggle theme">🌙</button></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+    <h1 class="visually-hidden">Gallery</h1>
+
+    <section class="intro">
+      <p>Welcome! Click any photo to open in full view. Use ←/→ or swipe to move, and Esc to close (or click off screen).</p>
+    </section>
+
+    <section id="gallery" class="gallery-grid" aria-label="Photo gallery">
+      <!-- Image 1 -->
+      <figure class="card">
+        <img
+          src="images/IMG_9394.jpg"
+          alt="Signet Warhorse III @ Port Canaveral on 10/16/25"
+          loading="lazy"
+          data-camera="Canon EOS Rebel T6"
+          data-lens="EF75-300mm f/4-5.6"
+          data-dimensions="4406 × 2937"
+          data-filesize="9 MB"
+          data-format="CR2"
+          data-focal="105 mm"
+          data-shutter="1/800 sec"
+          data-aperture="f/5.6"
+          data-iso="400"
+          data-original="images/IMG_9394.jpg"
+        />
+      </figure>
+
+      <!-- Image 2 -->
+      <figure class="card">
+        <img
+          src="images/IMG_9378.jpg"
+          alt="Signet Warhorse III & Braveheart @ Port Canaveral on 10/16/25"
+          loading="lazy"
+          data-camera="Canon EOS Rebel T6"
+          data-lens="EF75-300mm f/4-5.6"
+          data-dimensions="4841 × 3227"
+          data-filesize="3.5 MB"
+          data-format="CR2"
+          data-focal="140 mm"
+          data-shutter="1/800 sec"
+          data-aperture="f/5.6"
+          data-iso="500"
+          data-original="images/IMG_9378.jpg"
+        />
+      </figure>
+
+      <!-- Image 3 -->
+      <figure class="card">
+        <img
+          src="images/IMG_9329.jpg"
+          alt="Booster B1091 w/ Caribbean @ Port Canaveral on 10/16/25"
+          loading="lazy"
+          data-camera="Canon EOS Rebel T6"
+          data-lens="EF75-300mm f/4-5.6"
+          data-dimensions="3456 × 5184"
+          data-filesize="3.5 MB"
+          data-format="CR2"
+          data-focal="135 mm"
+          data-shutter="1/1000 sec"
+          data-aperture="f/5.6"
+          data-iso="200"
+          data-original="images/IMG_9329.jpg"
+        />
+      </figure>
+
+      <!-- Image 4 -->
+      <figure class="card">
+        <img
+          src="images/IMG_9074.jpg"
+          alt="Sikes Hall @ Clemson University"
+          loading="lazy"
+          data-camera="Canon EOS Rebel T6"
+          data-lens="EF-S18-55mm f/3.5-5.6"
+          data-dimensions="4848 × 3232"
+          data-filesize="4 MB"
+          data-format="CR2"
+          data-focal="27 mm"
+          data-shutter="1/1250 sec"
+          data-aperture="f/6.3"
+          data-iso="800"
+          data-original="images/IMG_9329.jpg"
+        />
+      </figure>
+
+
+      <!-- Image 5 -->
+       <figure class="card">
+        <img
+          src="images/IMG_8781.jpg"
+          alt="Bombardier CL-600-2B19 @ Donaldson Field Airport (KGYH) "
+          loading="lazy"
+          data-camera="Canon EOS Rebel T6"
+          data-lens="EF75-300mm f/4-5.6"
+          data-dimensions="4026 × 2684"
+          data-filesize="2 MB"
+          data-format="CR2"
+          data-focal="110 mm"
+          data-shutter="1/1000 sec"
+          data-aperture="f/4.5"
+          data-iso="160"
+          data-original="images/IMG_8781.jpg"
+        />
+      </figure>
+
+       <!-- Image 6 -->
+       <figure class="card">
+        <img
+          src="images/IMG_9942.jpg"
+          alt="U.S. Navy P-8A Poseidon @ Donaldson Field Airport (KGYH) "
+          loading="lazy"
+          data-camera="Canon EOS Rebel T6"
+          data-lens="EF75-300mm f/4-5.6"
+          data-dimensions="4718 × 3145"
+          data-filesize="2.2 MB"
+          data-format="CR2"
+          data-focal="180 mm"
+          data-shutter="1/1000 sec"
+          data-aperture="f/5.0"
+          data-iso="160"
+          data-original="images/IMG_9942.jpg"
+        />
+      </figure>
+
+     <!-- Image 7 -->
+       <figure class="card">
+        <img
+          src="images/IMG_9424.jpg"
+          alt="Booster B1091 @ Port Canaveral on 10/16/25"
+          loading="lazy"
+          data-camera="Canon EOS Rebel T6"
+          data-lens="EF75-300mm f/4-5.6"
+          data-dimensions="4663 × 3109"
+          data-filesize="2.7 MB"
+          data-format="CR2"
+          data-focal="80 mm"
+          data-shutter="1/1000 sec"
+          data-aperture="f/5.6"
+          data-iso="250"
+          data-original="images/IMG_9424.jpg"
+        />
+      </figure>
+
+      <!-- Image 8 -->
+       <figure class="card">
+        <img
+          src="images/IMG_1584.jpg"
+          alt="Mustang @ Donaldson Field Airport (KGYH)"
+          loading="lazy"
+          data-camera="Canon EOS Rebel T6"
+          data-lens="EF75-300mm f/4-5.6"
+          data-dimensions="3456 × 5184"
+          data-filesize="2.4 MB"
+          data-format="CR2"
+          data-focal="150 mm"
+          data-shutter="1/200 sec"
+          data-aperture="f/5.0"
+          data-iso="400"
+          data-original="images/IMG_1584.jpg"
+        />
+      </figure>
+
+      <!-- Image 9 -->
+       <figure class="card">
+        <img
+          src="images/IMG_8192.jpg"
+          alt="RBAF 1604 F-16 Fighting Falcon @ Donaldson Field Airport (KGYH)"
+          loading="lazy"
+          data-camera="Canon EOS Rebel T6"
+          data-lens="EF75-300mm f/4-5.6"
+          data-dimensions="4969 × 3313"
+          data-filesize="2 MB"
+          data-format="CR2"
+          data-focal="300 mm"
+          data-shutter="1/1600 sec"
+          data-aperture="f/6.3"
+          data-iso="200"
+          data-original="images/IMG_8192.jpg"
+        />
+      </figure>
+
+      <!-- Image 10 -->
+       <figure class="card">
+        <img
+          src="images/IMG_9201.jpg"
+          alt="Jeep @ Donaldson Field Airport (KGYH)"
+          loading="lazy"
+          data-camera="Canon EOS Rebel T6"
+          data-lens="EF-S18-55mm f/3.5-5.6"
+          data-dimensions="3456 × 5184"
+          data-filesize="6.6 MB"
+          data-format="CR2"
+          data-focal="18 mm"
+          data-shutter="1/250 sec"
+          data-aperture="f/4.5"
+          data-iso="100"
+          data-original="images/IMG_9201.jpg"
+        />
+      </figure>
+
+
+      <!-- Image 11 -->
+       <figure class="card">
+        <img
+          src="images/IMG_8932.jpg"
+          alt="The Shepherd Hotel @ Downtown Clemson SC"
+          loading="lazy"
+          data-camera="Canon EOS Rebel T6"
+          data-lens="EF-S18-55mm f/3.5-5.6"
+          data-dimensions="4568 × 3045"
+          data-filesize="5 MB"
+          data-format="CR2"
+          data-focal="20 mm"
+          data-shutter="1/500 sec"
+          data-aperture="f/5.6"
+          data-iso="250"
+          data-original="images/IMG_8932.jpg"
+        />
+      </figure>
+
+      <!-- Image 12 -->
+       <figure class="card">
+        <img
+          src="images/3.8.25_Grayson Kargol_VT-04.jpg"
+          alt="Clemson Mens Basketball vs VT on 3/8/25"
+          loading="lazy"
+          data-camera="Canon EOS 6D Mark II"
+          data-lens="EF24-70mm f/2.8L II USM"
+          data-dimensions="4288 × 2859"
+          data-filesize="2.9 MB"
+          data-format="CR2"
+          data-focal="35 mm"
+          data-shutter="1/1250"
+          data-aperture="f/2.8"
+          data-iso="3200"
+          data-original="images/3.8.25_Grayson Kargol_VT-04.jpg"
+        />
+      </figure>
+
+      <!-- Image 13 -->
+       <figure class="card">
+        <img
+          src="images/3.8.25_Grayson Kargol_VT-27.jpg"
+          alt="Clemson Mens Basketball vs VT on 3/8/25"
+          loading="lazy"
+          data-camera="Canon EOS 6D Mark II"
+          data-lens="EF24-70mm f/2.8L II USM"
+          data-dimensions="6240 × 4160"
+          data-filesize="5.2 MB"
+          data-format="CR2"
+          data-focal="55 mm"
+          data-shutter="1/1250"
+          data-aperture="f/2.8"
+          data-iso="3200"
+          data-original="images/3.8.25_Grayson Kargol_VT-27.jpg"
+        />
+      </figure>
+
+      <!-- Image 14 -->
+       <figure class="card">
+        <img
+          src="images/3.8.25_Grayson Kargol_VT.jpg"
+          alt="Clemson Mens Basketball vs VT on 3/8/25"
+          loading="lazy"
+          data-camera="Canon EOS 6D Mark II"
+          data-lens="EF24-70mm f/2.8L II USM"
+          data-dimensions="6240 × 4160"
+          data-filesize="8.1 MB"
+          data-format="CR2"
+          data-focal="50 mm"
+          data-shutter="1/1250"
+          data-aperture="f/2.8"
+          data-iso="3200"
+          data-original="images/3.8.25_Grayson Kargol_VT.jpg"
+        />
+      </figure>
+
+      <!-- Image 15 -->
+       <figure class="card">
+        <img
+          src="images/IMG_8530.jpg"
+          alt="Iwo Jima Memorial @ Arlington National Cemetery"
+          loading="lazy"
+          data-camera="Canon EOS Rebel T6"
+          data-lens="EF-S18-55mm f/3.5-5.6"
+          data-dimensions="5184 × 3456"
+          data-filesize="2.1 MB"
+          data-format="CR2"
+          data-focal="18 mm"
+          data-shutter="1/2500 sec"
+          data-aperture="f/5.6"
+          data-iso="250"
+          data-original="images/IMG_8530.jpg"
+        />
+      </figure>
+
+      <!-- Image 16 -->
+       <figure class="card">
+        <img
+          src="images/IMG_8579.jpg"
+          alt="Iwo Jima Memorial @ Arlington National Cemetery"
+          loading="lazy"
+          data-camera="Canon EOS Rebel T6"
+          data-lens="EF-S18-55mm f/3.5-5.6"
+          data-dimensions="5184 × 3456"
+          data-filesize="6.8 MB"
+          data-format="CR2"
+          data-focal="75 mm"
+          data-shutter="1/1250 sec"
+          data-aperture="f/4.5"
+          data-iso="320"
+          data-original="images/IMG_8579.jpg"
+        />
+      </figure>
+
+      <!-- Image 17 -->
+       <figure class="card">
+        <img
+          src="images/2.14.25_Grayson Kargol_NCSTATE-20.jpg"
+          alt="Clemson Gymnastics vs NC State on 2/14/25"
+          loading="lazy"
+          data-camera="Canon EOS 6D Mark II"
+          data-lens="EF24-70mm f/2.8L II USM"
+          data-dimensions="5267 × 3511"
+          data-filesize="4.2 MB"
+          data-format="CR2"
+          data-focal="70 mm"
+          data-shutter="1/1250"
+          data-aperture="f/3.2"
+          data-iso="8000"
+          data-original="images/2.14.25_Grayson Kargol_NCSTATE-20.jpg"
+        />
+      </figure>
+
+      <!-- Image 18 -->
+       <figure class="card">
+        <img
+          src="images/2.14.25_Grayson Kargol_NCSTATE-09.jpg"
+          alt="Clemson Gymnastics vs NC State on 2/14/25"
+          loading="lazy"
+          data-camera="Canon EOS 6D Mark II"
+          data-lens="EF24-70mm f/2.8L II USM"
+          data-dimensions="6240 × 4160"
+          data-filesize="4.9 MB"
+          data-format="CR2"
+          data-focal="55 mm"
+          data-shutter="1/1250"
+          data-aperture="f/3.2"
+          data-iso="4000"
+          data-original="images/2.14.25_Grayson Kargol_NCSTATE-09.jpg"
+        />
+      </figure>
+
+      <!-- Image 19 -->
+       <figure class="card">
+        <img
+          src="images/2.14.25_Grayson Kargol_NCSTATE-04.jpg"
+          alt="Clemson Gymnastics vs NC State on 2/14/25"
+          loading="lazy"
+          data-camera="Canon EOS 6D Mark II"
+          data-lens="EF24-70mm f/2.8L II USM"
+          data-dimensions="6240 × 4160"
+          data-filesize="4.6 MB"
+          data-format="CR2"
+          data-focal="70 mm"
+          data-shutter="1/1250"
+          data-aperture="f/3.2"
+          data-iso="4000"
+          data-original="images/2.14.25_Grayson Kargol_NCSTATE-04.jpg"
+        />
+      </figure>
+
+      <!-- Image 20 -->
+       <figure class="card">
+        <img
+          src="images/2.14.25_Grayson Kargol_NCSTATE-03.jpg"
+          alt="Clemson Gymnastics vs NC State on 2/14/25"
+          loading="lazy"
+          data-camera="Canon EOS 6D Mark II"
+          data-lens="EF24-70mm f/2.8L II USM"
+          data-dimensions="5377 × 3585"
+          data-filesize="4.5 MB"
+          data-format="CR2"
+          data-focal="61 mm"
+          data-shutter="1/1250"
+          data-aperture="f/3.2"
+          data-iso="4000"
+          data-original="images/2.14.25_Grayson Kargol_NCSTATE-03.jpg"
+        />
+      </figure>
+
+
+
+
+      <!-- Placeholder for future photos -->
+      <figure class="card placeholder">
+        <div class="placeholder-box">
+          <p>More photos coming soon 📸</p>
+        </div>
+      </figure>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> Grayson Kargol. All rights reserved.</p>
+      <p><a href="about.html">About</a> · <a href="https://instagram.com/therealgraysonk" aria-label="Instagram">Instagram</a> · <a href="mailto:contact@graysonkargol.com" aria-label="Email">Email</a></p>
+    </div>
+  </footer>
+
+  <!-- Lightbox dialog -->
+  <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer" hidden>
+    <button class="lb-btn lb-close" data-action="close" aria-label="Close (Esc)">×</button>
+    <button class="lb-btn lb-prev" data-action="prev" aria-label="Previous (←)">❮</button>
+
+    <figure class="lb-figure">
+      <img id="lb-image" alt="" />
+      <figcaption id="lb-caption">
+        <span id="lb-title"></span>
+        <div class="lb-actions">
+          <button class="btn-link" data-action="open-original" title="Open full image in a new tab">Open image ↗</button>
+          <button class="btn-link" data-action="details" title="View image details">Image details</button>
+        </div>
+      </figcaption>
+    </figure>
+
+    <button class="lb-btn lb-next" data-action="next" aria-label="Next (→)">❯</button>
+    <div class="lb-counter" aria-live="polite" aria-atomic="true"><span id="lb-index">1</span>/<span id="lb-total">0</span></div>
+  </div>
+
+  <!-- Image details popup -->
+  <div id="meta" class="meta" role="dialog" aria-modal="true" aria-label="Image details" hidden>
+    <div class="meta-card" role="document">
+      <button class="meta-close" data-action="meta-close" aria-label="Close details">×</button>
+      <h2 class="meta-title">Image Details</h2>
+      <dl class="meta-grid" id="meta-grid"><!-- populated by JS --></dl>
+    </div>
+  </div>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
