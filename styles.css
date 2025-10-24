@@ -293,6 +293,64 @@ body{
   text-decoration: underline;
 }
 
+/* === Affiliations Section === */
+.affiliations {
+  margin-top: 2.5rem;
+}
+
+.affiliations h2 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--text);
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0.25rem;
+  margin-bottom: 1rem;
+}
+
+/* Grid of cards */
+.affiliation-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1.5rem;
+  align-items: center;
+  justify-items: center;
+}
+
+/* Each logo + caption */
+.affiliation-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  gap: 0.5rem;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1rem;
+  transition: transform 0.2s ease, filter 0.2s ease;
+  box-shadow: var(--shadow);
+}
+
+.affiliation-card:hover {
+  transform: translateY(-3px);
+  filter: brightness(1.05);
+}
+
+.affiliation-card img {
+  max-height: 60px;
+  max-width: 120px;
+  object-fit: contain;
+  border-radius: 6px;
+  background: var(--bg);
+}
+
+.affiliation-card span {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text);
+  text-align: center;
+}
+
 /* Responsive layout */
 @media (max-width: 768px) {
   .about-content {
