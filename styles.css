@@ -351,6 +351,65 @@ body{
   text-align: center;
 }
 
+/* On narrow phones, show the whole image inside the card */
+@media (max-width: 520px) {
+  .card { background: var(--card); }
+  .card img {
+    object-fit: contain;       /* was cover */
+    background: var(--card);   /* subtle letterbox, no stretch */
+  }
+}
+
+@media (max-width: 600px) {
+  .affiliation-grid {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  }
+  .affiliation-card img {
+    max-height: 50px;
+  }
+}
+
+/* Back-to-top (mobile-friendly, theme-aware) */
+.back-to-top {
+  position: fixed;
+  right: 16px;
+  bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+  z-index: 900; /* below lightbox (which is 1000+) */
+  display: grid;
+  place-items: center;
+
+  width: 44px;  
+  height: 44px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: var(--card);
+  color: var(--text);
+  box-shadow: var(--shadow);
+  cursor: pointer;
+
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity .18s ease, transform .18s ease, filter .18s ease;
+}
+.back-to-top:hover { filter: brightness(1.06); }
+
+/* visible state toggled by JS */
+.back-to-top.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Don’t show when the lightbox is open */
+.lightbox:not([hidden]) ~ .back-to-top {
+  opacity: 0 !important;
+  pointer-events: none;
+}
+
+@media (max-width: 520px) {
+  .back-to-top { right: 12px; bottom: calc(12px + env(safe-area-inset-bottom, 0px)); }
+}
+
+
 /* Responsive layout */
 @media (max-width: 768px) {
   .about-content {
@@ -359,11 +418,16 @@ body{
   }
 
   .about-portrait {
-    max-width: 300px;
-    margin-inline: auto;
+  width: 100%;
+  height: auto;            /* important on mobile */
+  object-fit: cover;       /* or 'contain' if you want zero crop */
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
   }
 
   .about-content section {
     margin-top: 1.5rem;
   }
 }
+

@@ -161,6 +161,16 @@
   });
 })();
 
+// Add right after reserveAspectRatio() runs
+(function loosenAspectOnMobile(){
+  if (window.matchMedia('(max-width: 520px)').matches) {
+    document.querySelectorAll('#gallery figure.card').forEach(fig => {
+      fig.style.aspectRatio = 'auto';
+    });
+  }
+})();
+
+
 // ====== THEME TOGGLE ======
 (function () {
   const root = document.documentElement;
@@ -198,4 +208,43 @@
       updateIcon(newTheme);
     }
   });
+})();
+
+
+// ===== Back to top =====
+(function () {
+  const btn = document.getElementById('back-to-top');
+  if (!btn) return;
+
+  // Show when user scrolls down a bit
+  const SHOW_AT = 300; // px
+  let ticking = false;
+
+  const onScroll = () => {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(() => {
+      const visible = window.scrollY > SHOW_AT && (document.getElementById('lightbox')?.hidden ?? true);
+      btn.hidden = !visible;               // control focusability in ATs
+      btn.classList.toggle('is-visible', visible);
+      ticking = false;
+    });
+  };
+
+  // Smooth scroll back to top (respects reduced motion)
+  btn.addEventListener('click', () => {
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    window.scrollTo({ top: 0, behavior: prefersReduced ? 'auto' : 'smooth' });
+  });
+
+  // Initialize + listen
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
+
+  // If your lightbox opens/closes, re-check visibility
+  const lb = document.getElementById('lightbox');
+  if (lb) {
+    const observer = new MutationObserver(onScroll);
+    observer.observe(lb, { attributes: true, attributeFilter: ['hidden'] });
+  }
 })();
